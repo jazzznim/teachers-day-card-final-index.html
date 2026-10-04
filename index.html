@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A personalized animated Teachers' Day message card for Mr. Randy Bello from Jasmin Merdegia." />
+  <title>Happy Teachers' Day — Mr. Randy Bello</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div id="particles" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">✦</span> TEACHER'S DAY</div>
+    <button class="customize-btn" id="openCustomizer">Customize Card</button>
+  </header>
+
+  <main class="scene">
+    <section class="intro">
+      <p class="eyebrow">A LITTLE BOOK OF GRATITUDE</p>
+      <h1>Happy<br><em>Teachers' Day</em></h1>
+      <p class="intro-text">
+        A special interactive message prepared with appreciation for
+        <strong id="introTeacher">Mr. Randy Bello</strong>.
+      </p>
+      <div class="actions">
+        <button class="primary-btn" id="openBook">Open the Card <span>↗</span></button>
+        <button class="secondary-btn" id="musicBtn">♫ Play Music</button>
+      </div>
+      <p class="tip">Click the card to turn the pages like a little book.</p>
+    </section>
+
+    <section class="book-area" aria-label="Animated Teachers' Day card">
+      <div class="book-shadow"></div>
+
+      <div class="book" id="book">
+        <div class="book-back"></div>
+
+        <div class="spread">
+          <article class="page page-left">
+            <div class="page-decoration">✦</div>
+            <p class="page-label">A NOTE OF THANKS</p>
+            <h2>To <span id="leftTeacher">Mr. Randy Bello</span></h2>
+            <div class="photo-wrap">
+              <img id="teacherPhoto" src="assets/teacher-photo.jpg" alt="Teacher photo" />
+              <div class="photo-shine"></div>
+            </div>
+            <p class="photo-caption">With gratitude, respect &amp; appreciation.</p>
+          </article>
+
+          <article class="page page-right">
+            <p class="page-label">TEACHERS' DAY • 2026</p>
+            <h2 id="messageTitle">Happy Teachers' Day!</h2>
+            <p class="message" id="messageText">
+              Thank you for your patience, guidance, and dedication. Your lessons inspire us to learn,
+              grow, and become better every day. We truly appreciate everything you do! ❤️📚 God bless you and your family sir rands.
+            </p>
+            <div class="divider"><span>❦</span></div>
+            <p class="closing">With heartfelt thanks,</p>
+            <p class="student-name" id="studentName">Jasmin Merdegia</p>
+            <p class="small-note">Your student</p>
+          </article>
+        </div>
+
+        <button class="book-cover" id="bookCover" aria-label="Open or close the card">
+          <div class="cover-inner">
+            <div class="cover-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+            <p class="cover-small">A SPECIAL MESSAGE FOR</p>
+            <h2 id="coverTeacher">Mr. Randy Bello</h2>
+            <div class="cover-heart">♥</div>
+            <p class="cover-title">Happy<br><em>Teachers' Day</em></p>
+            <div class="cover-line"></div>
+            <p class="cover-from">FROM <span id="coverStudent">JASMIN MERDEGIA</span></p>
+            <p class="cover-hint">CLICK TO OPEN</p>
+          </div>
+        </button>
+
+        <div class="page-flip" id="pageFlip" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="controls">
+    <button id="closeBook" class="icon-btn" title="Close card">↩</button>
+    <button id="prevPage" class="icon-btn" title="Previous page">‹</button>
+    <span id="pageIndicator">Cover</span>
+    <button id="nextPage" class="icon-btn" title="Next page">›</button>
+    <button id="musicMiniBtn" class="music-mini" title="Play/pause music">♫</button>
+  </div>
+
+  <aside class="customizer" id="customizer" aria-hidden="true">
+    <div class="customizer-panel">
+      <button class="close-customizer" id="closeCustomizer" aria-label="Close customization panel">×</button>
+      <p class="eyebrow">MAKE IT YOURS</p>
+      <h2>Customize your card</h2>
+      <p class="panel-help">Changes appear immediately. Your selected photo and audio stay in this browser session.</p>
+
+      <label>
+        Teacher's name
+        <input id="teacherInput" type="text" value="Mr. Randy Bello" />
+      </label>
+
+      <label>
+        Student's name
+        <input id="studentInput" type="text" value="Jasmin Merdegia" />
+      </label>
+
+      <label>
+        Message title
+        <input id="titleInput" type="text" value="Happy Teachers' Day!" />
+      </label>
+
+      <label>
+        Personalized message
+        <textarea id="messageInput" rows="7">Thank you for your patience, guidance, and dedication. Your lessons inspire us to learn, grow, and become better every day. We truly appreciate everything you do! ❤️📚 God bless you and your family sir rands.</textarea>
+      </label>
+
+      <label class="file-label">
+        Add / change photo
+        <input id="photoInput" type="file" accept="image/*" />
+        <span class="file-button">Choose Photo</span>
+        <small id="photoFileName">Default teacher photo loaded</small>
+      </label>
+
+      <label class="file-label">
+        Add / change audio
+        <input id="audioInput" type="file" accept="audio/*,.m4a,.mp3,.wav,.ogg" />
+        <span class="file-button">Choose Audio</span>
+        <small id="audioFileName">Default Teachers' Day music loaded</small>
+      </label>
+
+      <div class="panel-actions">
+        <button class="primary-btn full" id="applyChanges">Apply &amp; Close</button>
+        <button class="secondary-btn full" id="resetCard">Reset to Default</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <audio id="backgroundMusic" src="assets/teachers-day-music.m4a" preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "project": "Teachers' Day Message Card",
+  "teacher": "Mr. Randy Bello",
+  "student": "Jasmin Merdegia",
+  "stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "features": [
+    "3D book flip",
+    "photo upload",
+    "audio upload",
+    "live message customization",
+    "animations"
+  ]
+}
